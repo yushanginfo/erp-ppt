@@ -1,0 +1,12 @@
+[@b.head/]
+  [@b.toolbar title="新建和修改产品制造环节分类"]
+    bar.addBack();
+  [/@]
+  [@b.form name="taskCategoryForm" action=b.rest.save(taskCategory) theme="list"]
+    [@b.textfield label="编码" name="taskCategory.code" value=(taskCategory.code)! required="true" maxlength="100" /]
+    [@b.textfield label="名称" name="taskCategory.name" value=(taskCategory.name)! required="true" maxlength="100" style="width:250px"/]
+    [@b.formfoot]
+      [@b.submit value="提交"/]
+    [/@]
+  [/@]
+[@b.foot/]

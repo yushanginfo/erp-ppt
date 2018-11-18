@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orm>
+  <mapping class="com.yushang.erp.ppt.model.DefaultMapping" />
+  <naming>
+    <profile package = "com.yushang.erp.ppt" pluralize="true" schema="ppt"/>
+  </naming>
+</orm>

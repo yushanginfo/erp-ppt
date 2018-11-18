@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<mvc>
+  <profile name="yushang.erp.ppt" package="com.yushang.erp.ppt.web.action">
+    <action defaultMethod="index" suffix="Action"/>
+    <url path="/" suffix="" style="seo" />
+    <interceptors>
+      <interceptor name="web.Interceptor.hibernate" />
+    </interceptors>
+  </profile>
+</mvc>

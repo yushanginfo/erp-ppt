@@ -1,0 +1,20 @@
+[@b.head/]
+  [@b.grid items=products var="product"]
+    [@b.gridbar]
+      bar.addItem("${b.text("action.new")}", action.add());
+      bar.addItem("${b.text("action.modify")}", action.edit());
+      bar.addItem("${b.text("action.delete")}", action.remove("确认要删除吗？"));
+    [/@]
+    [@b.row]
+      [@b.boxcol/]
+      [@b.col title="代码" width="5%" property="productCode"/]
+      [@b.col title="内部编号" width="10%" property="code"/]
+      [@b.col title="客户号" width="15%" property="customCode"/]
+      [@b.col title="名称" width="20%" property="name"][@b.a href="!info?id="+product.id]${product.name?html}[/@][/@]
+      [@b.col title="规格" width="15%" property="specification"/]
+      [@b.col title="数量" width="5%" property="amount"/]
+      [@b.col title="下单时间" width="15%" property="createdAt"]${(product.createdAt?string('yyyy-MM-dd HH:mm'))!}[/@]
+      [@b.col title="预计出货" width="10%" property="planShippedOn"/]
+    [/@]
+  [/@]
+[@b.foot/]

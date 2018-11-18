@@ -1,0 +1,18 @@
+[@b.head/]
+  [@b.grid items=tasks var="task"]
+    [@b.gridbar]
+      bar.addItem("${b.text("action.modify")}", action.edit());
+      bar.addItem("${b.text("action.delete")}", action.remove("确认要删除吗？"));
+    [/@]
+    [@b.row]
+      [@b.boxcol/]
+      [@b.col title="内部编号" width="10%" property="product.code"/]
+      [@b.col title="客户号" width="15%" property="product.customCode"/]
+      [@b.col title="名称" width="20%" property="product.name"/]
+      [@b.col title="规格" width="15%" property="product.specification"/]
+      [@b.col title="数量" width="5%" property="product.amount"/]
+      [@b.col title="完成人" width="10%" property="finishedBy"/]
+      [@b.col title="完成日期" width="15%" property="finishedOn"/]
+    [/@]
+  [/@]
+[@b.foot/]
