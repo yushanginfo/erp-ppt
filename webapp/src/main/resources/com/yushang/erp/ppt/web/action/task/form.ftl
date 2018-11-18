@@ -3,7 +3,7 @@
     bar.addBack();
   [/@]
   [@b.form name="taskForm" action=b.rest.save(task) theme="list"]
-    [#assign p=task.product/] 
+    [#assign p=task.product/]
     [@b.field label="内部编号"]${p.code}[/@]
     [@b.field label="客户号"]${p.customCode}[/@]
     [@b.field label="产品"]${p.name}[/@]

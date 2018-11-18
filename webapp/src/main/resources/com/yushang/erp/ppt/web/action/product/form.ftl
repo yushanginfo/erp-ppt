@@ -21,7 +21,7 @@
      [/#list]
     [/@]
     [@b.textfield label="备注" name="product.remark" value=(product.remark?html)! required="false" maxlength="200" /]
-    
+
     [@b.formfoot]
       [@b.submit value="提交"/]
     [/@]
