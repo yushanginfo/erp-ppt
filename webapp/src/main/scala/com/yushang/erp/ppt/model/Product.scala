@@ -54,4 +54,16 @@ class Product extends LongId with Coded with Named with Remark {
   def taskCategories: Set[TaskCategory] = {
     tasks.map(_.category).toSet
   }
+
+  def postponed: Boolean = {
+    !finished && LocalDate.now().isAfter(planShippedOn)
+  }
+
+  /**
+   * 提前一天提示快要延期
+   */
+  def nearShippedOn: Boolean = {
+    val now = LocalDate.now()
+    !finished && now.isAfter(planShippedOn.minusDays(2)) && !now.isAfter(planShippedOn)
+  }
 }

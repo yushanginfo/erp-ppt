@@ -20,6 +20,7 @@ package com.yushang.erp.ppt.model
 
 import org.beangle.data.model.LongId
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class Task extends LongId {
 
@@ -31,7 +32,9 @@ class Task extends LongId {
 
   var finishedBy: Option[String] = None
 
-  var finishedOn: Option[LocalDate] = None
+  var finishedAt: Option[LocalDateTime] = None
+
+  var finishedIp: Option[String] = None
 
   def this(product: Product, category: TaskCategory) {
     this()

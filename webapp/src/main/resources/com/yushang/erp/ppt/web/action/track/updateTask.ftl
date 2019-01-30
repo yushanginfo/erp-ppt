@@ -9,7 +9,7 @@
     [@b.field label="产品"]${p.name}[/@]
     [@b.field label="规格"]${p.specification}[/@]
     [@b.field label="任务环节"]${task.category.name}[/@]
-    [@b.datepicker label="完成时间" name="task.finishedOn" value=task.finishedOn required="true" /]
+    [@b.datepicker label="完成时间" name="task.finishedAt" value=task.finishedAt required="true" format="yyyy-MM-dd HH:mm:ss" style="width:150px"/]
     [@b.textfield label="完成人" name="task.finishedBy" value=(task.finishedBy?html)! required="true" /]
     [@b.formfoot]
       <input type="hidden" name="task.id" value="${task.id}">

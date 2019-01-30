@@ -22,16 +22,29 @@ import org.beangle.webmvc.api.view.View
 import org.beangle.webmvc.entity.action.RestfulAction
 
 import com.yushang.erp.ppt.model.Task
+import org.beangle.data.dao.OqlBuilder
+import org.beangle.commons.collection.Order
 
 class TaskAction extends RestfulAction[Task] {
 
   override def saveAndRedirect(task: Task): View = {
-    if (task.finishedOn != null && task.finishedOn != None) {
+    if (task.finishedAt != null && task.finishedAt != None) {
       task.finished = true
     } else {
       task.finished = false
     }
     entityDao.saveOrUpdate(task)
     super.saveAndRedirect(task)
+  }
+
+  protected override def getQueryBuilder(): OqlBuilder[Task] = {
+    val builder = OqlBuilder.from(classOf[Task], "task")
+    populateConditions(builder)
+    builder.orderBy(get(Order.OrderStr).orNull).limit(getPageLimit)
+    get("finishedOn") foreach { on =>
+      if (!on.isEmpty())
+        builder.where("to_char(task.finishedAt,'yyyy-MM-dd')=:on", on)
+    }
+    builder
   }
 }

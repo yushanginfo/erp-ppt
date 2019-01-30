@@ -28,8 +28,10 @@ import com.yushang.erp.ppt.model.Product
 import com.yushang.erp.ppt.model.Task
 import org.beangle.webmvc.entity.helper.PopulateHelper
 import com.yushang.erp.ppt.model.Enterprise
+import org.beangle.commons.web.util.RequestUtils
+import org.beangle.webmvc.api.action.ServletSupport
 
-class TrackAction extends ActionSupport {
+class TrackAction extends ActionSupport with ServletSupport {
 
   var entityDao: EntityDao = _
 
@@ -68,6 +70,7 @@ class TrackAction extends ActionSupport {
     } else {
       PopulateHelper.populate(task, classOf[Task].getName, "task")
       task.finished = true
+      task.finishedIp = Some(RequestUtils.getIpAddr(request))
       entityDao.saveOrUpdate(task)
       redirect("search", "info.save.success")
     }

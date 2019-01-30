@@ -12,7 +12,7 @@
       [@b.col title="规格" width="15%" property="product.specification"/]
       [@b.col title="数量" width="5%" property="product.amount"/]
       [@b.col title="完成人" width="10%" property="finishedBy"/]
-      [@b.col title="完成日期" width="15%" property="finishedOn"/]
+      [@b.col title="完成日期" width="15%" property="finishedAt"]<span title="${(task.finishedIp)!}">${(task.finishedAt?string('yyyy-MM-dd HH:mm:ss'))!'--'}[/@]
     [/@]
   [/@]
 [@b.foot/]
