@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.openurp</groupId>
     <artifactId>openurp-parent</artifactId>
-    <version>0.2.25</version>
+    <version>0.3.23</version>
   </parent>
   <groupId>com.yushanginfo.erp</groupId>
   <artifactId>yushang-erp-ppt-parent</artifactId>
@@ -16,4 +16,20 @@
     <module>webapp</module>
   </modules>
 
+  <properties>
+    <openurp.app.version>0.2.0</openurp.app.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openurp.app</groupId>
+      <artifactId>openurp-app-api</artifactId>
+      <version>${openurp.app.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openurp.app</groupId>
+      <artifactId>openurp-app-web</artifactId>
+      <version>${openurp.app.version}</version>
+    </dependency>
+  </dependencies>
 </project>

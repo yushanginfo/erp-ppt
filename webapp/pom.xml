@@ -15,33 +15,46 @@
   <dependencies>
     <dependency>
       <groupId>org.beangle.commons</groupId>
-      <artifactId>beangle-commons-web_2.12</artifactId>
+      <artifactId>beangle-commons-web_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.webui</groupId>
-      <artifactId>beangle-webui-bootstrap_2.12</artifactId>
+      <artifactId>beangle-webui-bootstrap_2.13</artifactId>
       <version>${beangle.webui.version}</version>
     </dependency>
     <dependency>
       <groupId>org.beangle.webmvc</groupId>
-      <artifactId>beangle-webmvc-spring-plugin_2.12</artifactId>
+      <artifactId>beangle-webmvc-spring-plugin_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.webmvc</groupId>
-      <artifactId>beangle-webmvc-entity-plugin_2.12</artifactId>
+      <artifactId>beangle-webmvc-entity-plugin_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.cdi</groupId>
-      <artifactId>beangle-cdi-api_2.12</artifactId>
+      <artifactId>beangle-cdi-api_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.cache</groupId>
-      <artifactId>beangle-cache-api_2.12</artifactId>
+      <artifactId>beangle-cache-api_2.13</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-ehcache</artifactId>
-      <version>${hibernate.version}</version>
+      <artifactId>hibernate-jcache</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>

@@ -23,10 +23,9 @@ import org.beangle.data.orm.MappingModule
 class DefaultMapping extends MappingModule {
 
   override def binding() {
-    defaultIdGenerator("auto_increment")
-    bind[Product]
-      .on(e => declare(
-        e.tasks is depends("product")))
+    bind[Product].declare { e =>
+      e.tasks is depends("product")
+    }
 
     bind[TaskCategory]
     bind[Task]

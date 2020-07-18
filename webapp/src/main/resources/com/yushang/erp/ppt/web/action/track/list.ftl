@@ -1,16 +1,15 @@
 [@b.head/]
 
 <div class="container" style="margin-top:20px">
-   <div class="row">
-     <div class="col-md-2">产品生产计划跟踪系统</div>
+   <div class="row"  style="justify-content: center;">
      <form name="searchform" action="${base}/track/search" method="post">
      <input type="hidden" name="_params" value="q=${Parameters['q']!}"/>
-   <div class="input-group col-md-8" style="margin-top:0px positon:relative">
-         <input type="text" name="q" class="form-control" placeholder="产品 名称 型号 客户号" value="${Parameters['q']!}"/>
+      <div class="input-group">
+         <input type="text" style="width:400px" name="q" class="form-control" placeholder="产品 名称 型号 客户号" value="${Parameters['q']!}"/>
               <span class="input-group-btn">
                  <button class="btn btn-info btn-search" >查找</button>
               </span>
-   </div>
+     </div>
      </form>
   </div>
 </div>
